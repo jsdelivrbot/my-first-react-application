@@ -1,0 +1,26 @@
+$font: Arial, Helvetica, sans-serif;
+
+$component-width: 460px;
+$component-element-width: $component-width / 3.54;
+$component-new-element-width: $component-element-width - 10;
+$ellipsis-width: 350px;
+
+$border-radius: 2px;
+
+$txt-size: 13px;
+$txt-email-size: 20px;
+
+$bg-color: #596177;
+$txt-color: #fff;
+$txt-email-color: #b4b5be;
+
+$btn-background-color-editmode: #4b5265;
+$btn-txt-color-editmode: #b4b5be;
+$btn-txt-size-editmode: 22px;
+$btn-background-color-exitmode: #ff0090;
+$btn-txt-color-exitmode: #fff;
+$btn-txt-size-exitmode: 17px;
+
+$component-element-background: #61697e;
+$component-element-background-hover: #6e758a;
+$component-element-new-border: #777e8e

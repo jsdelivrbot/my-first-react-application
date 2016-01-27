@@ -1,0 +1,189 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: $bg-color;
+    color: $txt-color;
+    font-size: $txt-size;
+    font-family: $font;
+}
+
+.glyphicon {
+    position: relative;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+     pointer-events: none;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    font-size: $txt-size;
+}
+
+.ellipsis {
+    width: $ellipsis-width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.component {
+    width: $component-width;
+    margin: 100px auto;
+
+    .component__logo {
+
+    }
+
+    .component__header {
+        position: relative;
+
+        .component__email,
+        .component__button {
+            position: absolute;
+        }
+
+        .component__email {
+            color: $txt-email-color;
+            font-size: $txt-email-size;
+            left: 0;
+        }
+
+        .component__button {
+            position: absolute;
+            right: 0;
+            border: none;
+            margin:0;
+            @include border-radius($border-radius);
+            span {font-size: 14px;}
+        }
+        .component__button:hover {
+            background-color: $btn-background-color-exitmode;
+            span {color: #fff;}
+        }
+
+        .component__button-edit
+        {
+            background-color: $btn-background-color-editmode;
+            color: $btn-txt-color-editmode;
+            font-size: $btn-txt-size-editmode;
+
+            .glyphicon-pencil:before {
+                content: "\270f";
+            }
+        }
+
+        .component__button-exit {
+            background-color: $btn-background-color-exitmode;
+            color: $btn-txt-color-exitmode;
+            font-size: $btn-txt-size-exitmode;
+        }
+    }
+
+    .component__grid {
+        .component-element__icon-remove {
+            display: none;
+        }
+    }
+
+    .component__grid.edit-mode {
+        .component-element__icon-remove {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            display: block;
+            z-index: 10;
+            color: #fff;
+        }
+
+        .glyphicon-remove-circle:before {
+            content: "\e088";
+        }
+    }
+
+    .component__grid {
+        position: relative;
+        clear: both;
+        top: 50px;
+
+        .component__element {
+            position: relative;
+            background-color: $component-element-background;
+            width: $component-element-width;
+            float:left;
+            margin: 0 5px 5px 0;
+            padding: 5px 10px;
+            @include border-radius($border-radius);
+            @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.2));
+            min-height: 30px;
+
+            input {
+                padding: 0;
+                margin: 0;
+                background: transparent;
+                border: none;
+                font-weight: lighter;
+                color: darken(#fff, 10%);
+                position: relative;
+                width: 100%;
+            }
+
+            .input-disabled {}
+            .input-enabled { }
+
+            .component-element__header {
+                margin-bottom: 10px;
+            }
+
+            .component-element__limit,
+            .component-element__updates,
+            .component-element__periode {
+                font-size: 11px;
+                opacity: .5;
+                font-style: italic;
+            }
+
+            .component-element__limit {}
+            .component-element__updates {}
+            .component-element__periode {}
+        }
+        .component__element:hover {background-color: $component-element-background-hover;}
+
+        .component__element-new {
+            border: 2px dashed $component-element-new-border;
+            width: $component-new-element-width;
+            float:left;
+            margin: 0 5px 5px 0;
+            padding: 10px 10px;
+            @include border-radius($border-radius);
+
+            min-height: 50px;
+        }
+
+        .component__element:nth-of-type(3n+0) {
+            margin-right: 0;
+        }
+    }
+}
