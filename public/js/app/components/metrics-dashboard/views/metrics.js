@@ -14,20 +14,14 @@ define('components/metrics-dashboard/views/metrics', [
 
     'use strict';
 
-    var MetricsView = function(injector) {
-
-        var elementTemplate = injector.createInstance(ElementTemplate);
-        var elementListTemplate = injector.createInstance(ElementListTemplate, elementTemplate.render());
-        var metricsDashboardTemplate = injector.createInstance(MetricsDashboardTemplate, elementListTemplate.render());
+    var MetricsView = function(data) {
+        var elementTemplate = new ElementTemplate();
+        var elementListTemplate = new ElementListTemplate(elementTemplate.render());
+        var metricsDashboardTemplate = new  MetricsDashboardTemplate(elementListTemplate.render(), data);
 
         return {
             init: function() {
                 return metricsDashboardTemplate.render();
-            },
-            dispose: function() {
-                elementTemplate = undefined;
-                elementListTemplate = undefined;
-                metricsDashboardTemplate = undefined;
             }
         }
     }

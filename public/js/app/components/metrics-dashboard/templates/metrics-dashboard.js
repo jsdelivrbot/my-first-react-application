@@ -8,14 +8,14 @@ define('components/metrics-dashboard/templates/metrics-dashboard', [
 
     'use strict';
 
-    var MetricsDashboardTemplate = function(MetricsElementList, metricsModel) {
+    var MetricsDashboardTemplate = function(MetricsElementList, data) {
         var MetricsApp = React.createClass({
             displayName: 'MetricsApp',
             getInitialState: function getInitialState() {
                 this.editMode = false;
                 return {
                     buttonTxt: '',
-                    data: metricsModel.getAll()
+                    data: data.metricsData
                 }
             },
             handleClick: function handleClick(e){
@@ -68,9 +68,13 @@ define('components/metrics-dashboard/templates/metrics-dashboard', [
                     'div',
                     {className: 'component'},
                     React.createElement(
+                        'img',
+                        {className: 'component__logo', src: data.logo}
+                    ),
+                    React.createElement(
                         'div',
                         {className: 'component__header'},
-                        React.createElement('div', {className: 'component__email ellipsis'}, 'someemail@tusi.com'),
+                        React.createElement('div', {className: 'component__email ellipsis'}, data.email),
                         React.createElement(
                             'button',
                             {className: 'component__button component__button-edit', onClick: this.handleClick},

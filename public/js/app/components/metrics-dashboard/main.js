@@ -15,7 +15,7 @@ define('components/metrics-dashboard/main', [
 
         return {
             create: function(data, wrapperId) {
-                metricsView = injector.createInstance(MetricsView);
+                metricsView = new MetricsView(data);
                 var element = metricsView.init();
                 ReactDOM.render(React.createElement(element), document.getElementById(wrapperId));
             }

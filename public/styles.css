@@ -42,6 +42,10 @@ input {
 .component {
   width: 460px;
   margin: 100px auto; }
+  .component .component__logo {
+    position: relative;
+    width: 100px;
+    margin: 0px 0 20px 0; }
   .component .component__header {
     position: relative; }
     .component .component__header .component__email,

@@ -6,6 +6,6 @@ requirejs.config({
         reactDom: '../../js/libs/react-dom.min'
     },
     shim: {
-        soma: { exports: 'soma' }
+        
     }
 });

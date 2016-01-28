@@ -51,7 +51,9 @@ input {
     margin: 100px auto;
 
     .component__logo {
-
+        position: relative;
+        width: 100px;
+        margin: 0px 0 20px 0;
     }
 
     .component__header {

@@ -1,13 +1,11 @@
 define([
     'chai',
     'sinon',
-    'soma',
     'metrics-dashboard/templates/metrics-dashboard',
     'react',
     'reactDOM'
 ], function (
     chai,
-    sinon,
     soma,
     MetricsDashboardTemplate,
     react,

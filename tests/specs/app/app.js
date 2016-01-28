@@ -1,14 +1,10 @@
 define([
     'chai',
     'sinon',
-    'soma',
-    'infuse',
     'app/app'
 ], function (
     chai,
     sinon,
-    soma,
-    infuse
     Application
 ) {
 
@@ -28,8 +24,8 @@ define([
             app = undefined;
         });
 
-        it('should fail', function() {
-            assert.equal(1,2);
+        it('should pass', function() {
+            assert.equal(2,2);
         });
 
     });

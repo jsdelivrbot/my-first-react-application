@@ -1,4 +1,4 @@
-define('models/metrics', [
+define('models/data', [
 
 ], function (
 
@@ -6,15 +6,9 @@ define('models/metrics', [
 
     'use strict';
 
-    var MetricsModel = function() {
-        /*
-        var componentElementHeader = React.createElement('p', {className: 'component-element__header'}, 'Metric Name');
-        var componentElementLimit = React.createElement('p', {className: 'component-element__limit'}, 'Limit X reached');
-        var componentElementUpdates = React.createElement('p', {className: 'component-element__updates'}, '162 updates');
-        var componentElementPeriode = React.createElement('p', {className: 'component-element__periode'}, 'Monthly resolution');
-        */
+    var DataModel = function() {
 
-        var metrics = [
+        var data = [
             {
                 id: 0,
                 headerTxt: 'Metric name',
@@ -47,16 +41,13 @@ define('models/metrics', [
 
         return {
             getAll: function() {
-                return metrics;
+                return data;
             },
             getOne: function(index) {
-                return metrics[index];
-            },
-            dispose: function() {
-                metrics = undefined;
+                return data[index];
             }
         };
     };
 
-    return MetricsModel;
+    return DataModel;
 });

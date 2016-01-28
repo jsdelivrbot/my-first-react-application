@@ -1,33 +1,25 @@
 define('app', [
-    'models/metrics',
-    'views/main-mediator',
-    'views/main-view'
+    'components/metrics-dashboard/main',
+    'models/data'
 ], function (
-    MetricsModel,
-    MainMediator,
-    MainView
+    MetricsDashboardComponent,
+    DataModel
 ) {
 
     'use strict';
 
-    var Application = soma.Application.extend({
-        init: function() {
-            try {
-                this.injector.mapClass('metricsModel', MetricsModel, true);
-                var mainMediator = this.mediators.create(MainMediator, new MainView());
+    var Application = function() {
+        var dataModel = new DataModel();
 
-            } catch(err) {
-                console.log('err', err);
-            }
+        var component = new MetricsDashboardComponent()
 
-        },
-        start: function () {
-            this.dispatcher.dispatch('start');
-        },
-        dispose: function () {
-            soma.Application.prototype.dispose.call(this);
-        }
-    });
+        component.create({
+            logo: './images/logo.svg',
+            email: 'someemailsupersuperlarge@somedomain.com',
+            metricsData: dataModel.getAll()
+        }, 'example'); // component__wrapper
+    }
 
     return Application;
+
 });
