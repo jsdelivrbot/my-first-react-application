@@ -67,33 +67,29 @@ for (var file in window.__karma__.files) {
     }
 }
 
-// solves a sinon fake server bug: https://github.com/cjohansen/Sinon.JS/issues/319
-if(navigator.userAgent.indexOf('PhantomJS') !== -1) {
-    window.ProgressEvent = function(type, params) {
-        params = params || {};
-        this.lengthComputable = params.lengthComputable || false;
-        this.loaded = params.loaded || 0;
-        this.total = params.total || 0;
-    };
-}
-
 require.config({
     'baseUrl': '/base',
     'paths': {
-        'chai': 'node_modules/chai/chai',
-        'sinon': 'node_modules/sinon/pkg/sinon',
-        'mocha': 'node_modules/mocha/mocha',
-        'spy-helper': 'tests/assets/spy-helper',
-        'app': 'public/js/app',
-        'components': 'public/js/app/components',
-        'metrics-dashboard': 'public/js/app/components/metrics-dashboard',
-        'react': 'public/js/libs/react.min',
-        'reactDOM': 'public/js/libs/react-dom.min'
+        'chai'              : 'node_modules/chai/chai',
+        'sinon'             : 'node_modules/sinon/pkg/sinon',
+        'mocha'             : 'node_modules/mocha/mocha',
+        'app'               : 'public/js/app',
+        'metrics-dashboard' : 'public/js/app/components/metrics-dashboard',
+        'react'             : 'public/js/libs/react.min',
+        'reactDOM'          : 'public/js/libs/react-dom.min'
     },
     'shim': {
         'sinon': {
             'exports': 'sinon'
         }
+        // ,
+        // 'reactDOM': {
+        //     deps: ['react']
+        // },
+        // 'app' : {
+        //     deps: ['react', 'reactDOM'],
+        //     exports: 'Application'
+        // }
     }
 });
 

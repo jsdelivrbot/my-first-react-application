@@ -20,6 +20,8 @@ define([
 
         var sut;
 
+console.debug('MetricsDashboardMain | ', MetricsDashboardMain);
+
         beforeEach(function() {
             // sut = new MetricsDashboardMain();
         });

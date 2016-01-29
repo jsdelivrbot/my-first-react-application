@@ -1,10 +1,8 @@
 define([
     'chai',
-    'sinon',
     'app/app'
 ], function (
     chai,
-    sinon,
     Application
 ) {
 
@@ -15,18 +13,7 @@ define([
     describe.only('App > app', function() {
 
         var app;
-
-        beforeEach(function() {
-
-        });
-
-        afterEach(function() {
-            app = undefined;
-        });
-
-        it('should pass', function() {
-            assert.equal(2,2);
-        });
+        console.debug('Application | ', Application);
 
     });
 

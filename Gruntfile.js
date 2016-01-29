@@ -40,13 +40,10 @@ module.exports = function(grunt) {
                 }
             }
         },
-        mochaTest: {
+        mocha: {
             test: {
-                options: {
-                    reporter: 'spec'
-                },
-                src: ['tests/specs/**/*.js']
-            }
+                src: ['tests/index.html']
+            },
         },
         karma: {
             unit: {
@@ -60,10 +57,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('tests', ['mochaTest']);
+    grunt.registerTask('test', ['mocha']);
     grunt.registerTask('default',['watch']);
     grunt.registerTask('ugger', [
         'uglify', 'cssmin'

@@ -19,28 +19,25 @@ module.exports = function (config) {
             {pattern: 'node_modules/requirejs-plugins/**/*.js', included: false},
             {pattern: 'node_modules/chai/chai.js', included: false},
             {pattern: 'node_modules/sinon/pkg/sinon.js', included: false},
-            {pattern: 'public/**/*.js', included: false, served: true},
+            {pattern: 'public/**/*.js', included: true, served: true},
+            {pattern: 'public/js/app/config/*.js', included: false, served: false},
+            {pattern: 'public/js/libs/*.js', included: false, served: false},
             {pattern: 'public/**/*.css', included: false, served: true},
             {pattern: 'public/images/**/**', included: false, served: true},
             {pattern: 'public/fonts/**/**', included: false, served: true},
-            'tests/assets/spy-helper.js',
-            'tests/assets/utils.js',
             'tests/assets/karma-runner.js'
         ],
-
 
         // list of files to exclude
         exclude: [
 
         ],
 
-
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
 
         },
-
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
@@ -66,8 +63,7 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        // browsers: ['Chrome'],
-        browsers: ['ChromeExtra'],
+        browsers: ['Chrome'],
         // browsers: ['PhantomJS'],
 
 

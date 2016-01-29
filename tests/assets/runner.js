@@ -4,7 +4,8 @@ require.config({
         'specs': '../../tests/specs',
         'mocha': '../../node_modules/mocha/mocha',
         'chai': '../../node_modules/chai/chai',
-        'sinon': '../../node_modules/sinon/pkg/sinon'
+        'sinon': '../../node_modules/sinon/pkg/sinon',
+        'app': 'app'
     },
     'shim': {
         'mocha': {
@@ -15,10 +16,6 @@ require.config({
         }
     }
 });
-
-//console.warn = console.debug = console.info = function() {};
-
-// solves a sinon fake server bug: https://github.com/cjohansen/Sinon.JS/issues/319
 
 console.log('USER-AGENT');
 console.log(navigator.userAgent);
@@ -32,12 +29,14 @@ if(navigator.userAgent.indexOf('PhantomJS') !== -1) {
     };
 }
 
-require(['mocha', 'chai'], function(mocha, chai) {
-    mocha.setup('bdd');
-    if(window.mochaPhantomJS) {
-        window.mochaPhantomJS.run();
-    }
-    else {
-        mocha.run();
-    }
+require(['app'], function() {
+    require(['mocha', 'chai'], function(mocha, chai) {
+        mocha.setup('bdd');
+        if(window.mochaPhantomJS) {
+            window.mochaPhantomJS.run();
+        }
+        else {
+            mocha.run();
+        }
+    });
 });
