@@ -82,14 +82,6 @@ require.config({
         'sinon': {
             'exports': 'sinon'
         }
-        // ,
-        // 'reactDOM': {
-        //     deps: ['react']
-        // },
-        // 'app' : {
-        //     deps: ['react', 'reactDOM'],
-        //     exports: 'Application'
-        // }
     }
 });
 

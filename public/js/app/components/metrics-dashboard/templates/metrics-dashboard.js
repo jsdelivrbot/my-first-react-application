@@ -1,4 +1,4 @@
-define('components/metrics-dashboard/templates/metrics-dashboard', [
+define('metrics-dashboard/templates/metrics-dashboard', [
     'react',
     'reactDom'
 ], function (
@@ -24,6 +24,10 @@ define('components/metrics-dashboard/templates/metrics-dashboard', [
                     this.setState({ buttonTxt: 'EXIT EDITION MODE'});
                     e.target.className = 'component__button component__button-exit';
                     grid.className = 'component__grid edit-mode';
+
+                    var ellipsis = e.target.parentElement.children[1];
+                    ellipsis.className = 'component__email ellipsis edit-mode';
+
                     this.editMode = true;
                 }
                 else {
@@ -31,6 +35,10 @@ define('components/metrics-dashboard/templates/metrics-dashboard', [
                     this.setState({ buttonTxt: ''});
                     e.target.parentElement.className = 'component__button component__button-edit';
                     grid.className = 'component__grid';
+
+                    var ellipsis = e.target.parentElement.parentElement.children[1];
+                    ellipsis.className = 'component__email ellipsis';
+
                     this.editMode = false;
                 }
             },
@@ -56,7 +64,8 @@ define('components/metrics-dashboard/templates/metrics-dashboard', [
                     }
                 }
                 if (itemToRemove) {
-                    elementList.splice(id, 1);
+                    console.log(elementList, itemToRemove, id);
+                    elementList.splice(itemToRemove, 1);
                     this.setState({data: elementList});
                 }
             },
@@ -68,12 +77,12 @@ define('components/metrics-dashboard/templates/metrics-dashboard', [
                     'div',
                     {className: 'component'},
                     React.createElement(
-                        'img',
-                        {className: 'component__logo', src: data.logo}
-                    ),
-                    React.createElement(
                         'div',
                         {className: 'component__header'},
+                        React.createElement(
+                            'img',
+                            {className: 'component__logo', src: data.logo}
+                        ),
                         React.createElement('div', {className: 'component__email ellipsis'}, data.email),
                         React.createElement(
                             'button',

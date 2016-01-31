@@ -44,6 +44,10 @@ input {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    &.edit-mode {
+        width: $ellipsis-edit-mode-width;
+    }
 }
 
 .component {
@@ -58,6 +62,7 @@ input {
 
     .component__header {
         position: relative;
+        height: 70px;
 
         .component__email,
         .component__button {
@@ -76,6 +81,8 @@ input {
             border: none;
             margin:0;
             @include border-radius($border-radius);
+            height: 30px;
+            bottom: 0px;
             span {font-size: 14px;}
         }
         .component__button:hover {
@@ -128,7 +135,7 @@ input {
     .component__grid {
         position: relative;
         clear: both;
-        top: 50px;
+        top: 30px;
 
         .component__element {
             position: relative;

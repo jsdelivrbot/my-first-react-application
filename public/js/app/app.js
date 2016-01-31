@@ -1,23 +1,23 @@
-define('app', [
-    'components/metrics-dashboard/main',
-    'models/data'
+define('app/app', [
+    'models/data',
+    'metrics-dashboard/main'
 ], function (
-    MetricsDashboardComponent,
-    DataModel
+    DataModel,
+    MetricsDashboardComponent
 ) {
 
     'use strict';
 
     var Application = function() {
-        var dataModel = new DataModel();
 
-        var component = new MetricsDashboardComponent()
+        var dataModel = new DataModel();
+        var component = new MetricsDashboardComponent();
 
         component.create({
-            logo: './images/logo.svg',
+            logo: dataModel.getLogo(),
             email: 'someemailsupersuperlarge@somedomain.com',
             metricsData: dataModel.getAll()
-        }, 'example'); // component__wrapper
+        }, 'component__wrapper');
     }
 
     return Application;

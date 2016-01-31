@@ -1,9 +1,9 @@
-define('components/metrics-dashboard/views/metrics', [
+define('metrics-dashboard/views/metrics', [
     'react',
     'reactDom',
-    'components/metrics-dashboard/templates/metrics-dashboard',
-    'components/metrics-dashboard/templates/element-list',
-    'components/metrics-dashboard/templates/element'
+    'metrics-dashboard/templates/metrics-dashboard',
+    'metrics-dashboard/templates/element-list',
+    'metrics-dashboard/templates/element'
 ], function (
     React,
     ReactDOM,

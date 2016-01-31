@@ -1,4 +1,4 @@
-define('components/metrics-dashboard/templates/element-list', [
+define('metrics-dashboard/templates/element-list', [
     'react',
     'reactDom'
 ], function (
@@ -18,6 +18,7 @@ define('components/metrics-dashboard/templates/element-list', [
             },
             removeElement: function(e) {
                 var parent = this.props.that;
+                console.log(parent, e.props.data);
                 parent.removeElement(e.props.data.id)
             },
             render: function render() {

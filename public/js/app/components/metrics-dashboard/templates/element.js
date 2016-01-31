@@ -1,4 +1,4 @@
-define('components/metrics-dashboard/templates/element', [
+define('metrics-dashboard/templates/element', [
     'react',
     'reactDom'
 ], function (

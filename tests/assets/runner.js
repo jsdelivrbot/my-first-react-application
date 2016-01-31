@@ -1,11 +1,10 @@
 require.config({
-    'baseUrl': '../../public',
+    baseUrl: '/new-relic/public/',
     'paths': {
         'specs': '../../tests/specs',
         'mocha': '../../node_modules/mocha/mocha',
         'chai': '../../node_modules/chai/chai',
-        'sinon': '../../node_modules/sinon/pkg/sinon',
-        'app': 'app'
+        'sinon': '../../node_modules/sinon/pkg/sinon'
     },
     'shim': {
         'mocha': {
@@ -29,14 +28,12 @@ if(navigator.userAgent.indexOf('PhantomJS') !== -1) {
     };
 }
 
-require(['app'], function() {
-    require(['mocha', 'chai'], function(mocha, chai) {
-        mocha.setup('bdd');
-        if(window.mochaPhantomJS) {
-            window.mochaPhantomJS.run();
-        }
-        else {
-            mocha.run();
-        }
-    });
+require(['mocha', 'chai'], function(mocha, chai) {
+    mocha.setup('bdd');
+    if(window.mochaPhantomJS) {
+        window.mochaPhantomJS.run();
+    }
+    else {
+        mocha.run();
+    }
 });

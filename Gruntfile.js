@@ -18,17 +18,6 @@ module.exports = function(grunt) {
                 tasks: ['sass', 'cssmin']
             }
         },
-        uglify: {
-            my_target: {
-                files: {
-                    'public/main.min.js': [
-                        'public/js/*.js',
-                        'public/js/app/*.js',
-                        'public/js/app/**/*.js',
-                    ]
-                }
-            }
-        },
         cssmin: {
             options: {
                 shorthandCompacting: false,
@@ -49,19 +38,49 @@ module.exports = function(grunt) {
             unit: {
                 configFile: 'karma.conf.js',
             }
+        },
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: 'public',
+                    mainConfigFile: [
+                        'build/require.config.js',
+                        'public/js/app/config/amd.js'
+                    ],
+                    generateSourceMaps: false,
+                    name: 'js/main',
+                    out: 'public/main.min.js',
+                    removeCombined: true,
+                    findNestedDependencies: true,
+                    uglify: {
+                        beautify: false,
+                        mangle: false
+                    }
+                }
+            }
+        },
+        connect: {
+            server: {
+                options: {
+                    keepalive: true,
+                    port: 9001,
+                    base: '_src'
+                }
+            }
         }
     });
 
     // Load tasks
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-karma');
 
+
+    // grunt.registerTask('connect', 'connect');
     grunt.registerTask('test', ['mocha']);
     grunt.registerTask('default',['watch']);
-    grunt.registerTask('ugger', [
-        'uglify', 'cssmin'
-    ]);
+    grunt.registerTask('minify', ['requirejs']);
 };

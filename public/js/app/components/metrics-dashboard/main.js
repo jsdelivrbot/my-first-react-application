@@ -1,5 +1,5 @@
-define('components/metrics-dashboard/main', [
-    'components/metrics-dashboard/views/metrics',
+define('metrics-dashboard/main', [
+    'metrics-dashboard/views/metrics',
     'react',
     'reactDom'
 ], function (
@@ -10,7 +10,7 @@ define('components/metrics-dashboard/main', [
 
     'use strict';
 
-    var MetricsMain = function(injector, mediators) {
+    var MetricsMain = function() {
         var metricsView;
 
         return {
