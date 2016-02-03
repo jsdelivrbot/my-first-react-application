@@ -13,7 +13,7 @@ The app runs using a local server. To get it ready you need to type:
 
 ```grunt connect:server```
 
-
+*The folder that will be used as a base path is the _src/. There you will find all the minified files.
 
 ##How to use the component##
 
