@@ -1,13 +1,13 @@
 The project has been build using RequireJS and React. As a module it is, you can instantiate it whether you want, and the way to do it is very easy.
 
-## Installation##
+## Installation
 
 The app has been built using grunt. The dependencies can be found at the Gruntfile.json. To install all the dependencies just open the terminal and go to the project folder. Once you are there just use the npm call: 
 
 ```npm install ```
 
 
-## Get it running##
+## Get it running
 
 The app runs using a local server. To get it ready you need to type:
 
@@ -15,11 +15,11 @@ The app runs using a local server. To get it ready you need to type:
 
 *The folder that will be used as a base path is the _src/. There you will find all the minified files.
 
-## How to use the component##
+## How to use the component
 
 **Import** the entry point of the component using *RequireJS*.
 
-#### Import####
+#### Import
 ```
 define([
     'metrics-dashboard/main'
@@ -28,7 +28,7 @@ define([
 ) {
 ```
 
-#### Instantiate####
+#### Instantiate
 
 After importing the entry point of the component we are able to instantiate it in to our code.
 
@@ -36,7 +36,7 @@ After importing the entry point of the component we are able to instantiate it i
 var component = new MetricsDashboardComponent();
 ```
 
-#### Build the component####
+#### Build the component
 
 We build the component by calling the ```create()```method and passing these arguments:
 
